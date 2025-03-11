@@ -135,6 +135,7 @@ export default function Navbar() {
 
             <Button
               size="lg"
+              asChild
               className="hidden rounded-full bg-black text-white hover:bg-gray-800 md:inline-flex dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
               style={{
                 height: isScrolled ? '36px' : '44px',
@@ -142,7 +143,9 @@ export default function Navbar() {
                 transition: 'all 0.5s',
               }}
             >
-              Get started
+              <Link href="https://app.forwardliveconfrence.org" target="_blank">
+                Get started
+              </Link>
             </Button>
 
             <motion.button
@@ -252,8 +255,16 @@ export default function Navbar() {
               </nav>
 
               <div className="border-t border-gray-100 p-4 dark:border-gray-700">
-                <Button className="w-full rounded-full bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
-                  Get started
+                <Button
+                  asChild
+                  className="w-full rounded-full bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+                >
+                  <Link
+                    href="https://app.forwardliveconfrence.org"
+                    target="_blank"
+                  >
+                    Get started
+                  </Link>
                 </Button>
               </div>
             </motion.div>
