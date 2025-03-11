@@ -1,36 +1,60 @@
 'use client'
 
+import BlurImage from '@/components/miscellaneous/blur-image'
+import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export function Hero() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
+        <div className="grid gap-6 lg:grid-cols-[1fr_600px] lg:gap-12 xl:grid-cols-[1fr_800px]">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="flex flex-col justify-center space-y-4"
           >
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              AI-Powered Customer Success
-            </h1>
-            <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl">
-              Enhance engagement, predict disengagement, and boost revenue with
-              AI-driven insights.
-            </p>
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                AI-Powered Customer Success Platform
+              </h1>
+              <p className="text-muted-foreground max-w-[600px] md:text-xl">
+                Transform your customer success strategy with real-time
+                insights, predictive analytics, and automated engagement tools.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button asChild size="lg">
+                <Link
+                  href="https://app.forwardliveconfrence.org"
+                  target="_blank"
+                >
+                  Get Started
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg">
+                <Link href="#features">Learn More</Link>
+              </Button>
+            </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto lg:mx-0"
           >
-            <a
-              className="inline-flex h-10 items-center justify-center rounded-md border border-gray-800 bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow-sm transition-colors hover:bg-gray-800 hover:text-gray-50 focus-visible:ring-1 focus-visible:ring-gray-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
-              href="#"
-            >
-              Get Started
-            </a>
+            <div className="bg-background rounded-lg border p-2 shadow-lg">
+              <BlurImage
+                src="/hero.jpg"
+                alt="PulseTrack Dashboard Interface"
+                width={800}
+                height={450}
+                className="rounded shadow-sm"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </div>

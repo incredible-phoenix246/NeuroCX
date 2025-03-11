@@ -26,7 +26,7 @@ export default function RootLayout({
           nunito.variable
         )}
       >
-        <div className="relative mx-auto min-h-dvh w-full max-w-[1500px]">
+        <div className="font-nunito relative mx-auto min-h-dvh w-full max-w-[1500px]">
           <Providers>{children}</Providers>
         </div>
       </body>
